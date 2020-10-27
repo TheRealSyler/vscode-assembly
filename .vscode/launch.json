@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "extensionHost",
+      "request": "launch",
+      "name": "client",
+      "runtimeExecutable": "${execPath}",
+      "args": ["--extensionDevelopmentPath=${workspaceRoot}", "--disable-extensions"],
+      "outFiles": ["${workspaceRoot}/dist/**/*.js"],
+      "preLaunchTask": {
+        "type": "npm",
+        "script": "build:dev"
+      }
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "server",
+      "port": 6009,
+      "restart": true,
+      "outFiles": ["${workspaceRoot}/dist/**/*.js"]
+    }
+    // {
+    //   "name": "Language Server E2E Test",
+    //   "type": "extensionHost",
+    //   "request": "launch",
+    //   "runtimeExecutable": "${execPath}",
+    //   "args": [
+    //     "--extensionDevelopmentPath=${workspaceRoot}",
+    //     "--extensionTestsPath=${workspaceRoot}/client/out/test/index",
+    //     "${workspaceRoot}/client/testFixture"
+    //   ],
+    //   "outFiles": ["${workspaceRoot}/client/out/test/**/*.js"]
+    // }
+  ],
+  "compounds": [
+    {
+      "name": "Client + Server",
+      "configurations": ["client", "server"]
+    }
+  ]
+}

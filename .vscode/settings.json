@@ -1,0 +1,8 @@
+{
+  "cofc.commands": [
+    {
+      "cmd": "workbench.action.debug.restart",
+      "path": "/home/syler/Documents/GitHub/assembly-lsp/dist"
+    }
+  ]
+}
